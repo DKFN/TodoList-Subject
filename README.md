@@ -7,9 +7,8 @@ It is not expected to finish the whole subject but try to get as much as you can
 
 As you only have few days before starting a real project, we provide you a unit test suite so you can quicly check your work.
 
-BDA Members will be at EPITA o
-
 Here are some tips to start your project well:
+
 	- Keep your memory sane, not doing so might create unexpected behaviors 	  and your program might not be stable, use valgrind and ask for help
 	- Keep your code clean, and follow EPITA coding style from the assistants, it will be a key factor when working in groups.
 	- If you do not remember how to use GDB we can help you get started again but please debug your program before calling us after that.

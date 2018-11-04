@@ -7,19 +7,18 @@ It is not expected to finish the whole subject but try to get as much as you can
 
 As you only have few days before starting a real project, we provide you a unit test suite so you can quicly check your work.
 
+BDA Members will be at EPITA o
+
 Here are some tips to start your project well:
-
 	- Keep your memory sane, not doing so might create unexpected behaviors 	  and your program might not be stable, use valgrind and ask for help
-
 	- Keep your code clean, and follow EPITA coding style from the assistants, it will be a key factor when working in groups.
-
 	- If you do not remember how to use GDB we can help you get started again but please debug your program before calling us after that.
-
 	- Have fun ! :)
 
 
-1/ A Task
-Notions:
+## 1/ A Task
+#### Notions:
+	
 	- Memory allocation
 	- Structs manipulation
 	- Enumerations	
@@ -55,8 +54,9 @@ You can use test1.c like this to check that your work is corect (just replace
 ➜  TodoList 
 ```
 
-2/ Many tasks
-Notions
+## 2/ Many tasks
+
+#### Notions
 	- Memory allocations
 	- Pointers
 	- Linked List
@@ -101,12 +101,9 @@ void destroy_list(struct TaskList *tl);
 
 Now, you need to add Tasks to your list:
 ```c
-/*
- * Write a function that appends a task to the list.
- */
-void push_task(struct TaskList *tl, struct Task *task);
-
-
+// FIXME : Duplicate of push, merge it or keep it on chap 2?
+// Adds the given task at the end of the list
+void add_to_list(struct TaskList* tl, struct Task* task);
 ```
 
 Last but not least print all the tasks contained on the list :
@@ -124,17 +121,83 @@ project files and you shoudl have this output :
 c
 ```
 
- 
+## 3/ Changing status of tasks
 
-3/ Changing status of tasks
-Notions
+#### Notions
 	- Enumerations
 	- List operations (find, get, remove, push, pop)
 
-4/ Saving and loading the list
-Notions
+
+You will need to code several funcitons to change the status of tasks, find a
+ task.
+ 
+ Here are the functions you need to implement :
+
+```c
+/*
+ * Write a function that searches for a task, and return an int if it exists:
+ * It exists:          0
+ * It does not exist: -1
+ */
+int find_a_task(struct TaskList *tl, int id);
+
+/*
+ * Write a function that returns a task using its id.
+ */
+struct Task* get_task(struct TaskList *tl, int id);
+
+/*
+ * Write a function that removes a task using its id.
+ */
+void remove_task(struct TaskList *tl, int id);
+
+/*
+ * Write a function that appends a task to the list.
+ */
+void push_task(struct TaskList *tl, struct Task *task);
+
+/*
+ * Write a function that remove the first task in the list.
+ */
+void pop_tasklist(struct TaskList *tl);
+
+``` 
+
+## 4/ Saving and loading the list
+
+#### Notions
 	- File manipulation
 	- Parsing files
+	
+Now that you can do anything you want with your task the last part is to save
+ and load the file!
+ 
+ You are free for the format of the file but you can ask us for an idea if 
+ you want
+ 
+```c
+/*
+ * Write a function that saves a TaskList to a file.
+ * Format :
+ *      count
+ *      id
+ *      title
+ *      status
+ *      id
+ *      title
+ *      status
+ *      ...
+ *      EOF
+ */
+void save_list(struct TaskList *tl, char *path);
+
+/*
+ * Write a function that load a file and creates the TaskList according to the
+ * format.
+ */
+struct TaskList* load_list(char *path);
+
+```
 
 5/ TodoCLI
 Notions

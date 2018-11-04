@@ -177,16 +177,6 @@ Now that you can do anything you want with your task the last part is to save
 ```c
 /*
  * Write a function that saves a TaskList to a file.
- * Format :
- *      count
- *      id
- *      title
- *      status
- *      id
- *      title
- *      status
- *      ...
- *      EOF
  */
 void save_list(struct TaskList *tl, char *path);
 
